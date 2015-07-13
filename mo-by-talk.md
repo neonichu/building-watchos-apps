@@ -341,6 +341,27 @@ WatchKit.framework
 
 ---
 
+# HealthKit.framework
+
+```swift
+let anchorValue = Int(HKAnchoredObjectQueryNoAnchor)
+let sampleType = HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate)
+
+let heartRateQuery = HKAnchoredObjectQuery(type: sampleType!,
+    predicate: nil, anchor: anchorValue,
+    limit: 0) { (query, sampleObjects, deletedObjects,
+    newAnchor, error) -> Void in
+  guard let heartRateSamples = sampleObjects as?[HKQuantitySample] else {return}
+  let sample = heartRateSamples.first
+  let value = sample!.quantity.doubleValueForUnit(self.heartRateUnit)
+  print(value)
+}
+
+heartRateQuery.updateHandler = // ...
+```
+
+---
+
 ![inline](images/symbolicate.png)
 
 ![inline](images/symbolication-failed.png)
@@ -385,9 +406,33 @@ WKInterfaceDevice.currentDevice().playHaptic(.Start)
 
 ---
 
+# Spotify Remote
+
+![inline](images/watch-playback.png)
+
+![](images/background.jpg)
+
+---
+
 # Demo
 
 ![](images/dream-came-true.gif)
+
+---
+
+![inline](images/provisioning-profiles.png)
+
+![](images/background.jpg)
+
+---
+
+![inline](images/cant-run.png)
+
+![](images/background.jpg)
+
+---
+
+![](images/manhattan-3.gif)
 
 ---
 
