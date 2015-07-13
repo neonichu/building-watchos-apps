@@ -191,6 +191,12 @@ class InterfaceController: WKInterfaceController {
 
 ---
 
+> If you measure interactions with your iOS app in minutes, you can expect interactions with your Watch app to be measured in seconds.
+
+![](images/background.jpg)
+
+---
+
 # Principles
 
 - Lightweight interactions
@@ -335,6 +341,14 @@ WatchKit.framework
 
 ---
 
+![inline](images/symbolicate.png)
+
+![inline](images/symbolication-failed.png)
+
+![](images/background.jpg)
+
+---
+
 # HealthKit.framework
 
 - not usable in the Watch simulator
@@ -418,8 +432,16 @@ WKInterfaceDevice.currentDevice().playHaptic(.Start)
 
 - Code isn't very different from iOS apps
 - But design very much is
+- Rethink your app for the watch, don't port it
+- If you can't - maybe you don't need a watch app
 
 ![](images/background.jpg)
+
+---
+
+> Don’t be afraid to not ship.
+
+@orta
 
 ---
 
@@ -433,6 +455,7 @@ WKInterfaceDevice.currentDevice().playHaptic(.Start)
 - https://developer.apple.com/library/prerelease/watchos/documentation/General/Conceptual/AppleWatch2TransitionGuide/
 - https://github.com/shu223/watchOS-2-Sampler
 - http://www.kristinathai.com/category/watchkit/
+- https://realm.io/news/watchkit-mistakes/
 
 ![](images/manhattan-1.gif)
 
